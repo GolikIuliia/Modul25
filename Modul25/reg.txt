@@ -1,0 +1,14 @@
+array (
+  'email' => 'alex_savchuk@inbox.ru',
+  'name' => 'Александр',
+  'password' => '1234',
+  'repeat-password' => '1234',
+)array (
+)array (
+  'email' => 'alex_savchuk@inbox.ru',
+  'name' => 'Александр',
+  'password' => '12345',
+  'repeat-password' => '12345',
+)array (
+)array (
+)'INSERT INTO users (name, email, password, created_at) VALUES(?, ?, ?, ?)''INSERT INTO users (name, email, password, created_at) VALUES(name, email, password, created_at)'
