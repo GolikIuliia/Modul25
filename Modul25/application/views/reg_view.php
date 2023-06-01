@@ -15,6 +15,7 @@ return $values;
 }
 
 $user = register($_POST);
+file_put_contents("reg.txt", var_export($user, true), FILE_APPEND | LOCK_EX);
 
 //var_dump($user);
 setLoginStatus($user);

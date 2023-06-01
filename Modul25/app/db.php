@@ -13,8 +13,8 @@ function get_connection()
 
 function insert(array $data)
 {
-    $query = 'INSERT INTO users (name, email, password, created_at) VALUES(name, email, password, created_at)';
-    file_put_contents("reg.txt", var_export($query, true), FILE_APPEND | LOCK_EX);
+    $query = 'INSERT INTO users (name, email, password, created_at) VALUES(?, ?, ?, ?)';
+    
     $db = get_connection();
     $stmt = $db->prepare($query);
     return $stmt->execute($data);

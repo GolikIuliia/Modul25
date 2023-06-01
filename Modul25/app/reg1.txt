@@ -1,0 +1,6 @@
+array (
+  'email' => 'alex_savchuk@inbox.ru',
+  'name' => 'Александр',
+  'password' => '123',
+  'repeat-password' => '123',
+)
