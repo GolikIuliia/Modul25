@@ -12,6 +12,16 @@ function register(array $data)
     return insert($values);
 }
 
+function authtorization(array $data)
+{
+    $values = [
+        $data['name'],
+        password_hash($data['password'], PASSWORD_ARGON2ID)
+       //(new DateTime())->format('Y-m-d H:i:s')
+    ];
+    return getUserByName($values);
+}
+
 function validate(array $request)
 {
     $errors = [];

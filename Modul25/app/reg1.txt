@@ -1,6 +1,78 @@
 array (
-  'email' => 'alex_savchuk@inbox.ru',
+  'name' => 'Юлия ',
+  'password' => 'ukamer',
+)array (
   'name' => 'Александр',
   'password' => '123',
-  'repeat-password' => '123',
+)array (
+  'name' => 'Александр',
+  'password' => '123',
+)array (
+  'name' => 'Александр',
+  'password' => '123',
+)array (
+  'name' => 'Александр',
+  'password' => '123',
+)array (
+  'name' => 'Александр',
+  'password' => '123',
+)array (
+  'name' => 'Александр',
+  'password' => '123',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'П',
+  'password' => '',
+  'repeat-password' => '',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'email' => 'platon_golik@mail.ru',
+  'name' => 'Платон',
+  'password' => '88888888',
+  'repeat-password' => '88888888',
+)array (
+  'name' => 'Платон',
+  'password' => '88888888',
+)array (
+  'name' => 'Платон',
+  'password' => '88888888',
 )

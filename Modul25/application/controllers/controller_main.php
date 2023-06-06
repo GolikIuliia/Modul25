@@ -1,8 +1,11 @@
 <?php
 class Controller_Main extends Controller
 {
- function action_index()
- { 
-  $this->view->generate('main_view.php', 'template_view.php');
- }
+    function index()
+    {   
+        $data = array(); 
+        $data['title'] = 'Главная странициа';  
+        
+        $this->view->generate('main_view.php', $data);
+    }
 }

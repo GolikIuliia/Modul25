@@ -1,5 +1,5 @@
 <?php
-
+require_once "db.php";
 file_put_contents("reg1.txt", var_export($_POST, true), FILE_APPEND | LOCK_EX);
 
 function register(array $data)
@@ -12,3 +12,4 @@ function register(array $data)
     ];
     return insert($values);
 }
+register($_POST);

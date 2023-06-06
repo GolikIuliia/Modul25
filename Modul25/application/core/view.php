@@ -1,18 +1,19 @@
 <?php
-class View
+/**
+ * Interface of View class
+ */
+
+interface IView { 
+    public function generate($content_view, $data=null); // Генерирует нашу страницу
+}
+
+class View implements IView
 {
- public $template_view; // здесь можно указать общий вид по умолчанию.
- 
- function generate($content_view, $template_view, $data = null)
- {
-  /*
-  if(is_array($data)) {
-   // преобразуем элементы массива в переменные
-   extract($data);
-  }
-  */
-  
-  include 'application/views/'.$template_view;
- }
+    public static $template_view = 'head_view.php';     // здесь можно указать общий вид по умолчанию.
+    
+    function generate($content_view, $data = null)
+    {
+        include 'application/views/'.self::$template_view;
+    }
 }
 ?>

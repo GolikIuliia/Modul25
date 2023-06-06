@@ -3,15 +3,15 @@ $('#registration').submit(function(e){
     var data = new FormData(this);
     $.ajax({
         type:'POST',
-        url: 'app/reg_handler.php',
+        url: 'app/auth_handler.php',
         data: data,
         cache: false,
         contentType: false,
         processData: false,
         success: function(response){
             swal({
-                title: "Отлично!",
-                text: "Пользователь успешно зарегистрирован!",
+                title: "Вы",
+                text: "вошли в учётную запись!",
                 icon: "success",
             }).then(() => {
                 location.reload();
