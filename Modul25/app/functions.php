@@ -62,3 +62,15 @@ function isEmailAlreadyExists(string $email)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     register($_POST);
 }
+
+function isNameAlreadyExists(string $name)
+{
+    if (getUserByName($name)) {
+        return true;
+    }
+    return false;
+}
+
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     authtorization($_POST);
+// }

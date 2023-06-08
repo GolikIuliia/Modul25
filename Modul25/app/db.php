@@ -12,11 +12,20 @@ $_MYSQL_SETTINGS['DB_NAME'] = 'registration';
 
 function get_connection()
 {
+
     return new PDO('mysql:host=localhost;dbname=registration', 'root', 'root');
     
     //host=localhost;dbname=registration
     //'mysql:host=127.0.0.1;dbname=registration'
 }
+
+//if((isset($_POST["name"]))&& (isset($_POST["password"])))
+//{
+//$link = mysqli_connect('mysql:host=localhost;dbname=registration', 'root', 'root');
+//$result = mysqli_query($link, "SELECT * FROM users WHERE NAME='". $_POST["name"]. "' 
+//AND PASSWORD='". $_POST["password"]. "'");
+//}
+
 
 function insert(array $data)
 {
@@ -46,11 +55,9 @@ function getUserByName(string $name)
     $query = 'SELECT * FROM users WHERE name = ?';
     $db = get_connection();
     $stmt = $db->prepare($query);
-    $stmt->execute([$name]);
-    
+    $stmt->execute([$name]);    
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     
-
     if ($result) {
         return $result;
     }

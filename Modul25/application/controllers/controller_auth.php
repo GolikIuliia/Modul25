@@ -1,5 +1,5 @@
 <?php
-class Controller_auth extends Controller
+class Controller_Auth extends Controller
 {
     function index()
     { 

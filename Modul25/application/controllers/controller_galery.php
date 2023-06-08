@@ -1,5 +1,5 @@
 <?php
-class Controller_Galery extends Controller
+class Controller_galery extends Controller
 {
     function index()
     {   

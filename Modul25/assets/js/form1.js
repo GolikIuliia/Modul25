@@ -1,4 +1,4 @@
-$('#registration').submit(function(e){
+$('#authtorization').submit(function(e){
     e.preventDefault();
     var data = new FormData(this);
     $.ajax({
@@ -10,8 +10,8 @@ $('#registration').submit(function(e){
         processData: false,
         success: function(response){
             swal({
-                title: "Вы",
-                text: "вошли в учётную запись!",
+                title: "Отлично!",
+                text: "Пользователь успешно зарегистрирован!",
                 icon: "success",
             }).then(() => {
                 location.reload();

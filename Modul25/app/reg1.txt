@@ -75,4 +75,9 @@ array (
 )array (
   'name' => 'Платон',
   'password' => '88888888',
+)array (
+  'email' => 'dim@dim.dim',
+  'name' => 'dim',
+  'password' => 'dim',
+  'repeat-password' => 'dim',
 )
