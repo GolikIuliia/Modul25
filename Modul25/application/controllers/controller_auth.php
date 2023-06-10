@@ -5,7 +5,8 @@ class Controller_Auth extends Controller
     { 
         $data = array(); 
         $data['title'] = 'Авторизация';  
-
+        header('Location: http://localhost/galery');
+        exit();
         $this->view->generate('auth_view.php', $data);
     }
 

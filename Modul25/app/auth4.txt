@@ -1,0 +1,13 @@
+array (
+  'name' => 'Платон',
+  'password' => '88888888',
+)array (
+  'name' => 'Платон',
+  'password' => '88888888',
+)array (
+  'name' => 'dim',
+  'password' => 'dim',
+)array (
+  'name' => 'dim',
+  'password' => 'dim',
+)
