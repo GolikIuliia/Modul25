@@ -22,6 +22,26 @@ function authtorization(array $data)
     return getUserByName($values);
 }
 
+function getimages (){
+    $images=[];
+    $images_dir="././images";
+    $files=scandir($images_dir);
+    return $files;
+}
+
+function deleteImage($image)
+{
+    file_put_contents("log_send_images.txt", "отправлено", FILE_APPEND | LOCK_EX);
+    file_put_contents("images.txt", $image, FILE_APPEND | LOCK_EX);
+}
+
+function deleteComments()
+{
+    $query = 'SELECT * FROM comment ORDER BY id DESC';
+    $db = get_connection();
+    return $db->query($query, PDO::FETCH_ASSOC);
+}
+
 function validate(array $request)
 {
     $errors = [];
@@ -59,10 +79,6 @@ function isEmailAlreadyExists(string $email)
     return false;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    register($_POST);
-}
-
 function isNameAlreadyExists(string $name)
 {
     if (getUserByName($name)) {
@@ -70,7 +86,3 @@ function isNameAlreadyExists(string $name)
     }
     return false;
 }
-
-// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//     authtorization($_POST);
-// }

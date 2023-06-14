@@ -25,7 +25,14 @@ function get_connection()
 //$result = mysqli_query($link, "SELECT * FROM users WHERE NAME='". $_POST["name"]. "' 
 //AND PASSWORD='". $_POST["password"]. "'");
 //}
-
+function insertComment(array $data)
+{
+    $query = 'INSERT INTO comment (name, comment, created_at) VALUES(?, ?, ?)';
+    //file_put_contents("log_send.txt", "отправлено", FILE_APPEND | LOCK_EX);
+    $db = get_connection();
+    $stmt = $db->prepare($query);
+    return $stmt->execute($data);
+}
 
 function insert(array $data)
 {
@@ -51,7 +58,7 @@ function getUserByEmail(string $email)
 
 function getUserByName(string $name)
 {
-    file_put_contents("auth.txt", var_export($result, true), FILE_APPEND | LOCK_EX);
+    
     $query = 'SELECT * FROM users WHERE name = ?';
     $db = get_connection();
     $stmt = $db->prepare($query);
@@ -70,3 +77,11 @@ function getUsersList()
     $db = get_connection();
     return $db->query($query, PDO::FETCH_ASSOC);
 }
+
+function getComments()
+{
+    $query = 'SELECT * FROM comment ORDER BY id DESC';
+    $db = get_connection();
+    return $db->query($query, PDO::FETCH_ASSOC);
+}
+
