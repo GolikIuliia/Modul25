@@ -36,10 +36,6 @@ class Controller_Auth extends Controller
             $response["user.authed"] = false;
         
         }
-        
-        //var_dump($user);
-       
-        echo json_encode($response); 
-        
+        echo json_encode($response);   
     }
 }

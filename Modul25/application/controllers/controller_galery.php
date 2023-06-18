@@ -19,9 +19,26 @@ class Controller_galery extends Controller
         if($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_SESSION["user.authed"]) || !$_SESSION["user.authed"]) return;
         $name = $_SESSION['user.name'];
         $comment = $_POST['comment'];
+        $image = $_POST['image_id']; 
         $date =  date("F j, Y, g:i a");
-        $info =  [$name, $comment, $date];
+
+        $image = explode("/", $image);
+        $filename = $image[count($image)-1]; //filename
+
+        $info =  [$name, $filename, $comment, $date];
+        
         $cback = insertComment($info);
+        echo json_encode($cback);
+        
+    }
+
+    public function comment_remove()
+    {
+        if($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_SESSION["user.authed"]) || !$_SESSION["user.authed"]) return;
+        
+        $comment = $_POST['comment'];
+    
+        $cback = deleteComments($comment);
         echo json_encode($cback);
         
     }
@@ -29,9 +46,9 @@ class Controller_galery extends Controller
     public function image_delete()
     {
         if($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_SESSION["user.authed"]) || !$_SESSION["user.authed"]) return;
-        // $image = $_POST['image'];
-        // $cback = deleteImage($image);
-        echo json_encode($_POST);
-        
+        $image = $_POST['image'];
+        $cback = deleteImage($image);
+
+        echo json_encode($cback);
     }
 }

@@ -1,4 +1,5 @@
 <?php
+include 'config.php'; 
 //if(!isset($_SESSION["user.authed"]) || !$_SESSION["user.authed"]) die;
 
 // Название <input type="file">
@@ -8,16 +9,14 @@ $input_name = 'file';
 $allow = array();
  
 // Запрещенные расширения файлов.
-$deny = array(
- 'phtml', 'php', 'php3', 'php4', 'php5', 'php6', 'php7', 'phps', 'cgi', 'pl', 'asp', 
- 'aspx', 'shtml', 'shtm', 'htaccess', 'htpasswd', 'ini', 'log', 'sh', 'js', 'html', 
- 'htm', 'css', 'sql', 'spl', 'scgi', 'fcgi', 'exe'
-);
+$deny = $cfg::getConfig('fileExtensionsDeny'); 
  
 // Директория куда будут загружаться файлы.
 $path = '../images/'; // .. - выйти из директории app (аналогично cd ..)
 
-$error = $success = '';
+file_put_contents("log_send_images.txt", "отправлено", FILE_APPEND | LOCK_EX);
+
+$error = '';
 if (!isset($_FILES[$input_name])) 
 {
     $error = 'Файл не загружен.';
@@ -25,6 +24,7 @@ if (!isset($_FILES[$input_name]))
 else 
 {
     $file = $_FILES[$input_name];
+
     if (!empty($file['error']) || empty($file['tmp_name'])) 
     {
         $error = 'Не удалось загрузить файл.';
@@ -33,8 +33,13 @@ else
     {
         $error = 'Не удалось загрузить файл.';
     } 
+    // elseif($file['size'] > 1024*1024*$cfg::getConfig('maxFileSize')) 
+    // { 
+    //     $error = "Слишком большой фаил";
+    // }
     else 
     { 
+
         $pattern = "[^a-zа-яё0-9,~!@#%^-_\$\?\(\)\{\}\[\]\.]";
         $name = mb_eregi_replace($pattern, '-', $file['name']);
         $name = mb_ereg_replace('[-]+', '-', $name);
@@ -54,4 +59,6 @@ else
             }
         }
     }
+
+    echo $error; 
 }

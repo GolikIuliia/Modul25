@@ -14,7 +14,17 @@ class Model_Galery extends Model
   }
   public function get_comments()
   {
-     return getComments();
+    $comments = array(); 
+    
+    foreach($this->get_data() as $image)
+    { 
+      $image_parts = explode("/", $image);
+      $filename = $image_parts[count($image_parts)-1]; //filename
+
+      $comments[$image] = getComments($filename);
+    }
+
+    return $comments;
   }
 }
 ?>

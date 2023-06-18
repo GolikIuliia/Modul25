@@ -53,51 +53,37 @@ $('#comment').submit(function(e){
         }
     });
 });
-function isJson(str) {
-    try {
-        JSON.parse(str);
-    } catch (e) {
-        return false;
-    }
-    return true;
-}
-$('#delete').submit(function(e){
+
+$('#deleteComment').submit(function(e){
     e.preventDefault();
     var data = new FormData(this);
     $.ajax({
         type:'POST',
-        url: 'galery/image_delete',
+        url: 'galery/comment_remove',
         data: data,
         cache: false,
         contentType: false,
         processData: false,
         success: function(response){
             console.log (response);
-            // if(!isJson(response)){
+            if(response === 'true'){
+                swal({
+                    title: "Отлично!",
+                    text: "Комментарий удалён!",
+                    icon: "success",
+                }).then(() => {
+                    location.reload();
+                }); 
                 
-            //     return;
-            // }
-            // console.log (response);
-            // var obj = jQuery.parseJSON(response);
-            // //console.log (response);
-            // if(response === 'true'){
-            //     swal({
-            //         title: "Отлично!",
-            //         text: "Комментарий отправлен!",
-            //         icon: "success",
-            //     }).then(() => {
-            //         location.reload();
-            //     }); 
-                
-            // } else {
-            //     swal({
-            //         title: "Плохо!",
-            //         text: "Комментарий не отправлен!",
-            //         icon: "failed",
-            //     }).then(() => {
-            //         location.reload();
-            //     });
-            // }
+            } else {
+                swal({
+                    title: "Плохо!",
+                    text: "Комментарий не удалён!",
+                    icon: "failed",
+                }).then(() => {
+                    location.reload();
+                });
+            }
             // console.log (obj);
             
         },

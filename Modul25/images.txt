@@ -1,0 +1,43 @@
+array (
+  0 => '444',
+  1 => NULL,
+  2 => 'sddf',
+  3 => 'June 17, 2023, 8:16 pm',
+)array (
+  0 => '444',
+  1 => '',
+  2 => 'fdsfsdf',
+  3 => 'June 17, 2023, 8:17 pm',
+)array (
+  0 => '444',
+  1 => 'fd.png',
+  2 => 'dsadsad',
+  3 => 'June 17, 2023, 8:19 pm',
+)array (
+  0 => '444',
+  1 => 'fd.png',
+  2 => 'fdsfsdf',
+  3 => 'June 17, 2023, 8:20 pm',
+)array (
+  0 => '444',
+  1 => 'fd.png',
+  2 => 'dadasd',
+  3 => 'June 17, 2023, 8:22 pm',
+)array (
+  0 => '444',
+  1 => 'fd.png',
+  2 => 'dsadsad',
+  3 => 'June 17, 2023, 8:23 pm',
+)array (
+  0 => '444',
+  1 => '',
+  2 => NULL,
+  3 => 'June 17, 2023, 8:23 pm',
+)array (
+  0 => '444',
+  1 => 'fd.png',
+  2 => NULL,
+  3 => 'June 17, 2023, 8:24 pm',
+)PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment WHERE image = \'http://study.ru/images/fd.png\'',
+))

@@ -31,13 +31,35 @@ function getimages (){
 
 function deleteImage($image)
 {
-    file_put_contents("log_send_images.txt", "отправлено", FILE_APPEND | LOCK_EX);
-    file_put_contents("images.txt", $image, FILE_APPEND | LOCK_EX);
+    $response = array(); 
+    $image = explode("/", $image);
+    $filename = $image[count($image)-1]; //filename
+
+    if( file_exists('./images/'.$filename) )
+    { 
+        $db = get_connection(); 
+        try { 
+            $response['deletedComments'] = $db->query("DELETE FROM comment WHERE image = '".$filename."'", PDO::FETCH_ASSOC); 
+        } 
+        catch (PDOException $e) { 
+            $response['deletedComments'] = 'no comment found';
+        } 
+
+        unlink('./images/'.$filename); 
+
+        $response['success'] = true; 
+    }
+    else 
+    { 
+        $response['success'] = false; 
+    }
+    
+    return $response; 
 }
 
-function deleteComments()
+function deleteComments($id)
 {
-    $query = 'SELECT * FROM comment ORDER BY id DESC';
+    $query = 'DELETE FROM comment WHERE id = \''.$id.'\''; 
     $db = get_connection();
     return $db->query($query, PDO::FETCH_ASSOC);
 }

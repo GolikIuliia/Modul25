@@ -1,0 +1,19 @@
+falsePDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))PDOStatement::__set_state(array(
+   'queryString' => 'SELECT * FROM comment ORDER BY id DESC',
+))

@@ -4,6 +4,7 @@ session_start();
 
 include './app/db.php';
 include './app/functions.php';
+include './app/config.php'; 
 
 require_once 'core/model.php';
 require_once 'core/view.php';
