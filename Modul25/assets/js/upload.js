@@ -37,7 +37,7 @@ $('#upload').submit(function(e){
     }
 });
 
-$('#deleteImage').submit(function(e){
+$('.deleteImage').submit(function(e){
     e.preventDefault();
     var data = new FormData(this);
     $.ajax({

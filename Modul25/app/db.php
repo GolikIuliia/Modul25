@@ -5,14 +5,14 @@
 
 */
 $_MYSQL_SETTINGS = array(); 
-$_MYSQL_SETTINGS['DB_HOST'] = 'localhost'; 
+$_MYSQL_SETTINGS['DB_HOST'] = 'host'; 
 $_MYSQL_SETTINGS['DB_PASS'] = 'root'; 
 $_MYSQL_SETTINGS['DB_USER'] = 'root';  
 $_MYSQL_SETTINGS['DB_NAME'] = 'registration';
 
 function get_connection()
 {
-    return new PDO('mysql:host=localhost;dbname=registration', 'root', 'root');
+    return new PDO('mysql:host=host;dbname=registration', 'root', 'root');
 }
 
 function insertComment(array $data)

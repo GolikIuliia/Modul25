@@ -10,7 +10,7 @@
 <?foreach($data['images'] as $link):?>
     <img src='<?=$link?>' alt='<?=$link?>'>
 
-    <?if( $data['authed']):?> <!-- такое надо писать в одну строчку --> 
+    <?if( $data['authed']):?> 
         <form class="deleteImage">
             <input type="hidden" name="image" id="image" value="<?=$link?>">
             <input type="submit" value="Удалить">
@@ -18,7 +18,7 @@
     <?endif;?>
     <?if(is_array($data['comments']) && is_array($data['comments'][$link])):?> 
         <?$comments = $data['comments'][$link];?> 
-        <?foreach($comments as $comment):?> <!-- слово php можно не использовать в конструкции <"?php -->
+        <?foreach($comments as $comment):?>
             <p><?=$comment['name']?> </br> <?=$comment['comment']?> </br> <?=$comment['created_at']?></br></p>
             <?if( $data['authed']):?>
                 <form class="deleteComment">

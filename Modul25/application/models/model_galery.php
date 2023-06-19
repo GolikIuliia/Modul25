@@ -7,7 +7,7 @@ class Model_Galery extends Model
     $images_dir="./images";
     $files=array_diff(scandir($images_dir), array('..', '.'));
     foreach ($files as $file) {
-      $images[]='http://localhost/images/' . $file;      
+      $images[]='http://host/images/' . $file;      // заменить study.ru на локалхост
       
     }
     return $images;
