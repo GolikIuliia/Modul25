@@ -6,7 +6,7 @@ function isJson(str) {
     }
     return true;
 }
-$('#comment').submit(function(e){
+$('.comment').submit(function(e){
     e.preventDefault();
     var data = new FormData(this);
     $.ajax({
@@ -54,7 +54,7 @@ $('#comment').submit(function(e){
     });
 });
 
-$('#deleteComment').submit(function(e){
+$('.deleteComment').submit(function(e){
     e.preventDefault();
     var data = new FormData(this);
     $.ajax({

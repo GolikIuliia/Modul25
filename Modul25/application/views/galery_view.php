@@ -11,7 +11,7 @@
     <img src='<?=$link?>' alt='<?=$link?>'>
 
     <?if( $data['authed']):?> <!-- такое надо писать в одну строчку --> 
-        <form id="deleteImage">
+        <form class="deleteImage">
             <input type="hidden" name="image" id="image" value="<?=$link?>">
             <input type="submit" value="Удалить">
         </form>
@@ -21,7 +21,7 @@
         <?foreach($comments as $comment):?> <!-- слово php можно не использовать в конструкции <"?php -->
             <p><?=$comment['name']?> </br> <?=$comment['comment']?> </br> <?=$comment['created_at']?></br></p>
             <?if( $data['authed']):?>
-                <form id="deleteComment">
+                <form class="deleteComment">
                     <input type="hidden" id="comment" name = "comment" value="<?=$comment['id']?>">
                     <input type="submit" value="Удалить">
                 </form>
@@ -30,7 +30,7 @@
     <?endif;?>
 
     <?if( $data['authed']):?> 
-        <form id="comment">
+        <form class="comment">
             <div class="form-group">
                 <p><?=$data["name"]?></p>
                 <div class="form-control-feedback"></div>
