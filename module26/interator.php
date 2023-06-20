@@ -20,22 +20,22 @@ class myIterator //implements interfaceIterator
     }
 
     public function rewind(): void {
-        //var_dump(__METHOD__);
+        var_dump(__METHOD__); //ничего не выводит
         $this->line = 0;
     }
 
     public function newLine($str) {
-       // var_dump(__METHOD__);
+        //var_dump(__METHOD__);
         return $this->ar[] = $str;
     }
 
     public function next(): void {
-       // var_dump(__METHOD__);
+       var_dump(__METHOD__);
         ++$this->line;
     }
 
     public function valid(): bool {
-        //var_dump(__METHOD__);
+        var_dump(__METHOD__);
         return isset($this->ar[$this->line]);
     }
 
@@ -57,7 +57,7 @@ class myIterator //implements interfaceIterator
     public function current() 
     {
         return $this->ar[$this->line];
-    }
+    } 
 }
 $iter = new myIterator;
 $fp = @fopen("int.txt", "r");
